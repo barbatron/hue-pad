@@ -1,8 +1,6 @@
-import { HueConfig } from "./types"
+import { load } from "ts-dotenv";
 
-const { env } = process
-
-export const hue: HueConfig = {
-  HUE_USERNAME: env.HUE_USERNAME!,
-  HUE_BASE_URL: env.HUE_BASE_URL!,
-}
+export const config = load({
+  HUE_USERNAME: String,
+  HUE_BRIDGE_IP: String,
+});
